@@ -265,7 +265,9 @@ while True:
             wandb.log({
                 "iter": iter_num,
                 "train/loss": losses['train'],
+                "train/ppl": np.e**losses['train'],
                 "val/loss": losses['val'],
+                "val/ppl": np.e**losses['val'],
                 "lr": lr,
                 "mfu": running_mfu*100, # convert to percentage
             })
